@@ -79,12 +79,6 @@
     if (rearrange) {
         [self rearrangeTags];
     }
-
-    if ([self.tagListDelegate respondsToSelector:@selector(tagList:shouldAddTagWithText:resultingContentSize:)]) {
-        if (![self.tagListDelegate tagList:self shouldAddTagWithText:tagView.tagText resultingContentSize:self.contentSize]) {
-            [self removeTag:tagView];
-        }
-    }
 }
 
 - (void)addTagView:(AMTagView *)tagView {
@@ -106,12 +100,6 @@
 
     if (rearrange) {
         [self rearrangeTags];
-    }
-
-    if ([self.tagListDelegate respondsToSelector:@selector(tagList:shouldAddTagWithText:resultingContentSize:)]) {
-        if (![self.tagListDelegate tagList:self shouldAddTagWithText:tagView.tagText resultingContentSize:self.contentSize]) {
-            [self removeTag:tagView];
-        }
     }
 }
 
@@ -174,8 +162,6 @@
         obj.frame = CGRectMake(maxX + self.marginX, maxY, size.width, size.height);
         [self addSubview:obj];
     };
-
-    [self setContentSize:CGSizeMake(self.frame.size.width, maxY + size.height + self.marginY)];
 }
 
 - (void)layoutSubviews {

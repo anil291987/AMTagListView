@@ -20,7 +20,7 @@
 
 typedef void (^AMTagListViewTapHandler)(AMTagView*);
 
-@interface AMTagListView : UIScrollView
+@interface AMTagListView : UIView
 
 /**-----------------------------------------------------------------------------
  * @name AMTagListView
